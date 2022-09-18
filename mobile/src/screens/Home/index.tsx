@@ -16,8 +16,8 @@ export function Home() {
 
   const navigation = useNavigation();
 
-  function handleOpenGame() {
-    navigation.navigate('game');
+  function handleOpenGame({ id, title, bannerUrl }: GameCardProps) {
+    navigation.navigate('game', { id, title, bannerUrl });
   }
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export function Home() {
 
         <Heading title="Find your duo!" subtitle="Choose the game..." />
 
-        <FlatList contentContainerStyle={styles.contentList} data={games} keyExtractor={item => item.id} renderItem={({ item }) => <GameCard data={item} onPress={handleOpenGame} />} horizontal showsHorizontalScrollIndicator={false} />
+        <FlatList contentContainerStyle={styles.contentList} data={games} keyExtractor={item => item.id} renderItem={({ item }) => <GameCard data={item} onPress={() => handleOpenGame(item)} />} horizontal showsHorizontalScrollIndicator={false} />
       </SafeAreaView>
     </Background>
   );
