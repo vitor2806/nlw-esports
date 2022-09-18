@@ -6,7 +6,7 @@ export function InviteBanner() {
     <div className="pt-1 mt-8 bg-nlw-gradient self-stretch rounded-lg overflow-hidden">
       <div className="bg-[#2A2634] px-8 py-6 flex justify-between items-center">
         <div>
-          <strong className="text-2xl text-white font-black block">Didn't find your duo?</strong>
+          <strong className="text-2xl text-white font-black block">Can't find your duo?</strong>
           <span className="text-zinc-400 block">Post an invite to find new mates!</span>
         </div>
 

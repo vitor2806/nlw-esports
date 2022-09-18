@@ -7,9 +7,8 @@ import logoImg from '../../assets/logo-nlw-esports.png';
 import { Background } from '../../components/Background';
 import { GameCard, GameCardProps } from '../../components/GameCard';
 import { Heading } from '../../components/Heading';
+import { BASE_URL } from '../../libs/api';
 import { styles } from './styles';
-
-const BASE_URL = 'http://192.168.0.199:3333';
 
 export function Home() {
   const [games, setGames] = useState<GameCardProps[]>([]);

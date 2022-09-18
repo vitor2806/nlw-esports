@@ -1,6 +1,7 @@
 import { Entypo } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Image, TouchableOpacity, View, FlatList, Text } from 'react-native';
+import { useEffect, useState } from 'react';
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { GameParams } from '../../@types/navigation';
@@ -8,11 +9,9 @@ import logoImg from '../../assets/logo-nlw-esports.png';
 import { Background } from '../../components/Background';
 import { DuoCard, DuoCardProps } from '../../components/DuoCard';
 import { Heading } from '../../components/Heading';
+import { BASE_URL } from '../../libs/api';
 import { THEME } from '../../theme';
 import { styles } from './styles';
-import { useEffect, useState } from 'react';
-
-const BASE_URL = 'http://192.168.0.199:3333';
 
 export function Game() {
   const route = useRoute();

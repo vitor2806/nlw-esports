@@ -32,7 +32,7 @@ export default function App() {
       <img src={logoImg} alt="" />
 
       <h1 className="text-6xl text-white font-black mt-20">
-        Your <span className="bg-nlw-gradient bg-clip-text text-transparent">duo</span> is here.
+        Your <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#9572FC] via-[#43E7AD] to-[#E1D55D]">duo</span> is here.
       </h1>
 
       <div className="grid grid-cols-6 gap-6 mt-16">
