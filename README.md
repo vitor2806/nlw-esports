@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img alt="Feedget" src=".github/cover.png" width="65%">
+  <img alt="NLW eSports" src=".github/cover.png" width="65%">
 </p>
 
 ## 🔧 Tech
