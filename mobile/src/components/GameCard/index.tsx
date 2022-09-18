@@ -6,9 +6,9 @@ import { styles } from './styles';
 
 export interface GameCardProps {
   id: string;
-  name: string;
-  ads: string;
-  cover: ImageSourcePropType;
+  title: string;
+  _count: { ads: number };
+  bannerUrl: string;
 }
 
 interface InternalProps extends TouchableOpacityProps {
@@ -18,10 +18,10 @@ interface InternalProps extends TouchableOpacityProps {
 export function GameCard({ data, ...rest }: InternalProps) {
   return (
     <TouchableOpacity style={styles.container} {...rest}>
-      <ImageBackground style={styles.cover} source={data.cover}>
+      <ImageBackground style={styles.cover} source={{ uri: data.bannerUrl }}>
         <LinearGradient style={styles.footer} colors={THEME.COLORS.FOOTER}>
-          <Text style={styles.name}>{data.name}</Text>
-          <Text style={styles.ads}>{data.ads} invites</Text>
+          <Text style={styles.name}>{data.title}</Text>
+          <Text style={styles.ads}>{data._count.ads >= 1 ? data._count.ads + ' invite(s)' : 'No invites'}</Text>
         </LinearGradient>
       </ImageBackground>
     </TouchableOpacity>
