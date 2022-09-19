@@ -2,8 +2,8 @@ import { Inter_400Regular, Inter_600SemiBold, Inter_700Bold, Inter_900Black, use
 import { StatusBar } from 'expo-status-bar';
 
 import { Background } from './src/components/Background';
+import { Loading } from './src/components/Loading';
 import { Routes } from './src/routes';
-import { Loading } from './src/components/Loading/index';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
