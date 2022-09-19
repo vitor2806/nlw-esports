@@ -3,14 +3,12 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import * as Select from '@radix-ui/react-select';
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
-import axios from 'axios';
 import { Check, GameController } from 'phosphor-react';
 import { FormEvent, useState } from 'react';
 
+import { api } from '../../libs/api';
 import { Input } from '../Form/Input';
 import { Selection } from '../Selection';
-
-const BASE_URL = 'http://localhost:3333';
 
 export function Modal() {
   const [weekDays, setWeekDays] = useState<string[]>([]);
@@ -28,7 +26,7 @@ export function Modal() {
     }
 
     try {
-      await axios.post(`${BASE_URL}/games/${game}/ads`, {
+      await api.post(`/games/${game}/ads`, {
         name: data.nick,
         yearsPlaying: Number(data.yearsPlaying),
         discord: data.discord,
@@ -37,11 +35,8 @@ export function Modal() {
         hourEnd: data.hourEnd,
         useVoiceChannel: useVoiceChannel,
       });
-
-      alert('Anúncio criado com sucesso!');
     } catch (err) {
       console.log(err);
-      alert('Erro ao criar anúncio!');
     }
   }
 

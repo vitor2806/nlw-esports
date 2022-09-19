@@ -1,19 +1,18 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 import * as Select from '@radix-ui/react-select';
-import axios from 'axios';
 import { Check } from 'phosphor-react';
 import { useEffect, useState } from 'react';
 
 import { GameProps } from '../../@types/game';
-
-const BASE_URL = 'http://localhost:3333';
+import { api } from '../../libs/api';
 
 export function Selection() {
   const [games, setGames] = useState<GameProps[]>([]);
 
   useEffect(() => {
-    axios(`${BASE_URL}/games`).then(res => setGames(res.data));
+    api.get('/games').then(res => setGames(res.data));
   }, []);
+
   return (
     <Select.Portal>
       <Select.Content className="flex flex-col gap-2">
