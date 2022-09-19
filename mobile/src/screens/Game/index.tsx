@@ -10,7 +10,7 @@ import { Background } from '../../components/Background';
 import { DuoCard, DuoCardProps } from '../../components/DuoCard';
 import { DuoMatch } from '../../components/DuoMatch';
 import { Heading } from '../../components/Heading';
-import { BASE_URL } from '../../libs/api';
+import { api } from '../../libs/api';
 import { THEME } from '../../theme';
 import { styles } from './styles';
 
@@ -28,15 +28,11 @@ export function Game() {
   }
 
   async function getDiscordUser(adsId: string) {
-    fetch(`${BASE_URL}/ads/${adsId}/discord`)
-      .then(res => res.json())
-      .then(data => setDiscordDuoSelected(data.discord));
+    api.get(`/ads/${adsId}/discord`).then(res => setDiscordDuoSelected(res.data.discord));
   }
 
   useEffect(() => {
-    fetch(`${BASE_URL}/games/${game.id}/ads`)
-      .then(res => res.json())
-      .then(data => setDuos(data));
+    api.get(`/games/${game.id}/ads`).then(res => setDuos(res.data));
   }, []);
 
   return (

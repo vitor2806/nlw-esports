@@ -23,7 +23,6 @@ This project has been developed with:
 - [Expo](https://expo.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Prisma](https://www.prisma.io/)
-- [Jest](https://jestjs.io/)
 - [RedixUI](https://www.radix-ui.com/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Express](https://expressjs.com/)
@@ -56,7 +55,7 @@ npm run dev
 
 - Mobile version
   - to run mobile version you must first change mobile/libs/api.ts
-    - in this file you can change BASE_URL variable to your machine IPV4 Address.
+    - in this file you can change IP variable to your machine IPV4 Address.
   - its also needed that you have a compatible mobile emulator or expo go installed in your phone.
 
 ```bash

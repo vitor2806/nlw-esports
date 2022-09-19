@@ -7,7 +7,7 @@ import logoImg from '../../assets/logo-nlw-esports.png';
 import { Background } from '../../components/Background';
 import { GameCard, GameCardProps } from '../../components/GameCard';
 import { Heading } from '../../components/Heading';
-import { BASE_URL } from '../../libs/api';
+import { api } from '../../libs/api';
 import { styles } from './styles';
 
 export function Home() {
@@ -20,9 +20,7 @@ export function Home() {
   }
 
   useEffect(() => {
-    fetch(`${BASE_URL}/games`)
-      .then(res => res.json())
-      .then(data => setGames(data));
+    api.get(`/games`).then(res => setGames(res.data));
   }, []);
 
   return (
