@@ -98,6 +98,8 @@ app.post('/games/:id/ads', async (req, res) => {
     },
   });
 
+  console.log(gameId);
+  console.log(ad);
   return res.status(201).json(ad);
 });
 

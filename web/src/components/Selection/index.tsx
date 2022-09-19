@@ -1,5 +1,6 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 import * as Select from '@radix-ui/react-select';
+import axios from 'axios';
 import { Check } from 'phosphor-react';
 import { useEffect, useState } from 'react';
 
@@ -11,9 +12,7 @@ export function Selection() {
   const [games, setGames] = useState<GameProps[]>([]);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/games`)
-      .then(res => res.json())
-      .then(data => setGames(data));
+    axios(`${BASE_URL}/games`).then(res => setGames(res.data));
   }, []);
   return (
     <Select.Portal>

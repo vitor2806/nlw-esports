@@ -1,7 +1,8 @@
 import * as Dialog from '@radix-ui/react-dialog';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { GameProps } from './@types/game';
 
+import { GameProps } from './@types/game';
 import logoImg from './assets/page-logo.svg';
 import { GameBanner } from './components/GameBanner';
 import { InviteBanner } from './components/InviteBanner';
@@ -13,9 +14,7 @@ export default function App() {
   const [games, setGames] = useState<GameProps[]>([]);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/games`)
-      .then(res => res.json())
-      .then(data => setGames(data));
+    axios(`${BASE_URL}/games`).then(res => setGames(res.data));
   }, []);
 
   return (
