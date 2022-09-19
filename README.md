@@ -44,7 +44,7 @@ This project can be executed in mobile or web version.
 npm run dev
 ```
 
-2. Choose between mobile or web
+2. Run web version to post invites, run mobile version to list invites
 
 - Web version
 
